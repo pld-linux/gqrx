@@ -4,9 +4,9 @@ Version:	2.2.0
 Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
-URL:		http://gqrx.dk/
 Source0:	http://downloads.sourceforge.net/gqrx/%{name}-%{version}-src.tar.gz
 # Source0-md5:	ff771b9c31ee17f704859398362b8cc0
+URL:		http://gqrx.dk/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtSvg-devel
