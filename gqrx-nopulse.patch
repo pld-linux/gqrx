@@ -1,0 +1,39 @@
+--- gqrx-2.2.0.org/gqrx.pro	2013-08-08 21:52:05.000000000 +0200
++++ gqrx-2.2.0/gqrx.pro	2014-03-01 21:46:56.512501576 +0100
+@@ -26,12 +26,15 @@
+ }
+ 
+ unix:!macx {
+-    CONFIG += link_pkgconfig
++  CONFIG += link_pkgconfig
++  contains(AUDIO_BACKEND, portaudio): {
++  } else {
+     packagesExist(libpulse libpulse-simple) {
+         # Comment out to use gr-audio (not recommended with ALSA and Funcube Dongle Pro)
+         AUDIO_BACKEND = pulse
+         message("Gqrx configured with pulseaudio backend")
+     }
++  }
+ }
+ 
+ RESOURCES += icons.qrc
+@@ -191,6 +194,7 @@
+     contains(AUDIO_BACKEND, pulse): {
+         PKGCONFIG += libpulse libpulse-simple
+     } else {
++        LIBS += -lportaudio
+         PKGCONFIG += gnuradio-audio
+     }
+     PKGCONFIG += gnuradio-analog \
+@@ -214,11 +218,6 @@
+     LIBS += -lboost_system-mt -lboost_program_options-mt
+     LIBS += -lgnuradio-runtime -lgnuradio-pmt -lgnuradio-audio -lgnuradio-analog
+     LIBS += -lgnuradio-blocks -lgnuradio-filter -lgnuradio-fft -lgnuradio-osmosdr
+-
+-    # portaudio
+-    contains(AUDIO_BACKEND, portaudio): {
+-        LIBS    += -lportaudio
+-    }
+ }
+ 
+ OTHER_FILES += \
