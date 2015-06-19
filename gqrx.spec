@@ -3,12 +3,12 @@
 #
 Summary:	Software defined radio receiver powered by GNU Radio and Qt
 Name:		gqrx
-Version:	2.2.0
-Release:	7
+Version:	2.3.0
+Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
-Source0:	http://downloads.sourceforge.net/gqrx/%{name}-%{version}-src.tar.gz
-# Source0-md5:	ff771b9c31ee17f704859398362b8cc0
+Source0:	http://downloads.sourceforge.net/gqrx/%{name}-%{version}.tar.xz
+# Source0-md5:	91e8e57998deede2b7e0486c65de31cc
 Patch0:		%{name}-nopulse.patch
 URL:		http://gqrx.dk/
 BuildRequires:	QtCore-devel
