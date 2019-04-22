@@ -4,7 +4,7 @@
 Summary:	Software defined radio receiver powered by GNU Radio and Qt
 Name:		gqrx
 Version:	2.11.5
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	https://github.com/csete/gqrx/releases/download/v%{version}/%{name}-sdr-%{version}-src.tar.xz
